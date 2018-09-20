@@ -10,23 +10,23 @@ import Foundation
 import UIKit
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
 }
 
 fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l > r
+    default:
+        return rhs < lhs
+    }
 }
 
 
@@ -65,7 +65,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
     fileprivate var state : State = .verify {
         didSet {
             switch(state) {
-                case .verify:
+            case .verify:
                 // change the function of the send code button
                 sendCodeButton.removeTarget(self, action: #selector(VerifyUIController.checkCode(_:)), for: .touchUpInside)
                 sendCodeButton.addTarget(self, action: #selector(VerifyUIController.sendCode(_:)), for: .touchUpInside)
@@ -74,8 +74,8 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                 // change function of cancel button
                 cancelButton.removeTarget(self, action: #selector(VerifyUIController.cancelCheck(_:)), for: .touchUpInside)
                 cancelButton.addTarget(self, action: #selector(VerifyUIController.cancelVerify(_:)), for: .touchUpInside)
-
-
+                
+                
                 // do some nice animations
                 UIView.animate(withDuration: 0.5, animations: {
                     self.countryField.alpha = 1
@@ -87,20 +87,20 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                     self.checkCodeField.alpha = 0
                     self.checkCodeSpinner.alpha = 0
                     
-                    self.cancelButtonLowConstraint.priority = UILayoutPriorityDefaultHigh
+                    self.cancelButtonLowConstraint.priority = UILayoutPriority.defaultHigh
                     self.cancelButtonHighConstraint.priority =
-                        UILayoutPriorityDefaultLow
+                        UILayoutPriority.defaultLow
                     
-                    self.tryAgainHiddenConstraint.priority = UILayoutPriorityDefaultHigh
-                    self.tryAgainVisibleConstraint.priority = UILayoutPriorityDefaultLow
+                    self.tryAgainHiddenConstraint.priority = UILayoutPriority.defaultHigh
+                    self.tryAgainVisibleConstraint.priority = UILayoutPriority.defaultLow
                     
                     self.tryAgainButton.alpha = 0
                     self.callInsteadButton.alpha = 0
                     
                     self.view.layoutIfNeeded()
-                }) 
+                })
                 
-                case .check:
+            case .check:
                 // change the function of the send code button
                 sendCodeButton.removeTarget(self, action: #selector(VerifyUIController.sendCode(_:)), for: .touchUpInside)
                 sendCodeButton.addTarget(self, action: #selector(VerifyUIController.checkCode(_:)), for: .touchUpInside)
@@ -109,7 +109,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                 // change function of cancel button
                 cancelButton.removeTarget(self, action: #selector(VerifyUIController.cancelVerify(_:)), for: .touchUpInside)
                 cancelButton.addTarget(self, action: #selector(VerifyUIController.cancelCheck(_:)), for: .touchUpInside)
-
+                
                 // do some nice animations
                 UIView.animate(withDuration: 0.5, animations: {
                     self.countryField.alpha = 0
@@ -121,19 +121,19 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                     self.checkCodeField.alpha = 1
                     self.checkCodeSpinner.alpha = 1
                     
-                    self.cancelButtonLowConstraint.priority = UILayoutPriorityDefaultLow
+                    self.cancelButtonLowConstraint.priority = UILayoutPriority.defaultLow
                     self.cancelButtonHighConstraint.priority =
-                        UILayoutPriorityDefaultHigh-1
+                        UILayoutPriority.defaultHigh - 1
                     
-                    self.tryAgainHiddenConstraint.priority = UILayoutPriorityDefaultHigh
-                    self.tryAgainVisibleConstraint.priority = UILayoutPriorityDefaultLow
+                    self.tryAgainHiddenConstraint.priority = UILayoutPriority.defaultHigh
+                    self.tryAgainVisibleConstraint.priority = UILayoutPriority.defaultLow
                     
                     self.tryAgainButton.alpha = 0
                     self.callInsteadButton.alpha = 0
                     self.view.layoutIfNeeded()
-                }) 
+                })
                 
-                case .tryagain:
+            case .tryagain:
                 // change the function of the send code button
                 sendCodeButton.removeTarget(self, action: #selector(VerifyUIController.sendCode(_:)), for: .touchUpInside)
                 sendCodeButton.addTarget(self, action: #selector(VerifyUIController.checkCode(_:)), for: .touchUpInside)
@@ -142,7 +142,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                 // change function of cancel button
                 cancelButton.removeTarget(self, action: #selector(VerifyUIController.cancelVerify(_:)), for: .touchUpInside)
                 cancelButton.addTarget(self, action: #selector(VerifyUIController.cancelCheck(_:)), for: .touchUpInside)
-
+                
                 // do some nice animations
                 UIView.animate(withDuration: 0.5, animations: {
                     self.countryField.alpha = 0
@@ -154,24 +154,24 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                     self.checkCodeField.alpha = 1
                     self.checkCodeSpinner.alpha = 1
                     
-                    self.cancelButtonLowConstraint.priority = UILayoutPriorityDefaultLow
+                    self.cancelButtonLowConstraint.priority = UILayoutPriority.defaultLow
                     self.cancelButtonHighConstraint.priority =
-                        UILayoutPriorityDefaultHigh-1
+                        UILayoutPriority.defaultHigh - 1
                     
-                    self.tryAgainHiddenConstraint.priority = UILayoutPriorityDefaultLow
-                    self.tryAgainVisibleConstraint.priority = UILayoutPriorityDefaultHigh
+                    self.tryAgainHiddenConstraint.priority = UILayoutPriority.defaultLow
+                    self.tryAgainVisibleConstraint.priority = UILayoutPriority.defaultHigh
                     
                     self.tryAgainButton.alpha = 1
                     self.callInsteadButton.alpha = 1
                     self.view.layoutIfNeeded()
-                }) 
-
+                })
+                
             }
         }
     }
     
     override func viewDidLoad() {
-    
+        
         // setup country picker
         countryController.delegate = self
         countryField.inputView = countryController.view
@@ -217,7 +217,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
         infoText.text = message
     }
     
-    func hideKeyboard(_ gesture: UITapGestureRecognizer) {
+    @objc func hideKeyboard(_ gesture: UITapGestureRecognizer) {
         countryField.resignFirstResponder()
         numberField.resignFirstResponder()
         checkCodeField.resignFirstResponder()
@@ -248,68 +248,68 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
     func onErrorCallback(_ error: VerifyError) {
         let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
         switch (error) {
-            case .invalidNumber:
-                let controller = UIAlertController(title: "Invalid Phone Number", message: "The phone number you entered is invalid.", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
+        case .invalidNumber:
+            let controller = UIAlertController(title: "Invalid Phone Number", message: "The phone number you entered is invalid.", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
             
-            case .invalidPinCode:
-                let controller = UIAlertController(title: "Wrong Pin Code", message: "The pin code you entered is invalid.", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-    
-                self.pinTry += 1
-    
-                if (self.pinTry == 3) {
-                    self.state = .tryagain
-                }
-    
-            case .invalidCodeTooManyTimes:
-                let controller = UIAlertController(title: "Invalid code too many times", message: "You have entered an invalid code too many times, verification process has stopped..", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .invalidCredentials:
-                let controller = UIAlertController(title: "Invalid Credentials", message: "Having trouble connecting to your account. Please check your app key and secret.", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .userExpired:
-                let controller = UIAlertController(title: "User Expired", message: "Verification for current use expired (usually due to timeout), please start verification again.", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .userBlacklisted:
-                let controller = UIAlertController(title: "User Blacklisted", message: "Unable to verify this user due to blacklisting!", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .quotaExceeded:
-                let controller = UIAlertController(title: "Quota Exceeded", message: "You do not have enough credit to complete the verification.", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .sdkRevisionNotSupported:
-                let controller = UIAlertController(title: "SDK Revision too old", message: "This SDK revision is not supported anymore!", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .osNotSupported:
-                let controller = UIAlertController(title: "iOS version not supported", message: "This iOS version is not supported", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .networkError:
-                let controller = UIAlertController(title: "Network Error", message: "Having trouble accessing the network.", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-            case .verificationAlreadyStarted:
-                let controller = UIAlertController(title: "Verification already started", message: "A verification is already in progress!", preferredStyle: .alert)
-                controller.addAction(action)
-                self.present(controller, animated: true, completion: nil)
-                
-            default: break
+        case .invalidPinCode:
+            let controller = UIAlertController(title: "Wrong Pin Code", message: "The pin code you entered is invalid.", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+            
+            self.pinTry += 1
+            
+            if (self.pinTry == 3) {
+                self.state = .tryagain
+            }
+            
+        case .invalidCodeTooManyTimes:
+            let controller = UIAlertController(title: "Invalid code too many times", message: "You have entered an invalid code too many times, verification process has stopped..", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .invalidCredentials:
+            let controller = UIAlertController(title: "Invalid Credentials", message: "Having trouble connecting to your account. Please check your app key and secret.", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .userExpired:
+            let controller = UIAlertController(title: "User Expired", message: "Verification for current use expired (usually due to timeout), please start verification again.", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .userBlacklisted:
+            let controller = UIAlertController(title: "User Blacklisted", message: "Unable to verify this user due to blacklisting!", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .quotaExceeded:
+            let controller = UIAlertController(title: "Quota Exceeded", message: "You do not have enough credit to complete the verification.", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .sdkRevisionNotSupported:
+            let controller = UIAlertController(title: "SDK Revision too old", message: "This SDK revision is not supported anymore!", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .osNotSupported:
+            let controller = UIAlertController(title: "iOS version not supported", message: "This iOS version is not supported", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .networkError:
+            let controller = UIAlertController(title: "Network Error", message: "Having trouble accessing the network.", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+        case .verificationAlreadyStarted:
+            let controller = UIAlertController(title: "Verification already started", message: "A verification is already in progress!", preferredStyle: .alert)
+            controller.addAction(action)
+            self.present(controller, animated: true, completion: nil)
+            
+        default: break
         }
     }
     
-    func sendCode(_ sender: AnyObject) {
+    @objc func sendCode(_ sender: AnyObject) {
         VerifyClient.getVerifiedUser(countryCode: (currentCountry["country_code"] as! String), phoneNumber: numberField.text!,
-        onVerifyInProgress: onVerifyInProgressCallback,
-        onUserVerified: onUserVerifiedCallback,
-        onError: onErrorCallback)
+                                     onVerifyInProgress: onVerifyInProgressCallback,
+                                     onUserVerified: onUserVerifiedCallback,
+                                     onError: onErrorCallback)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -317,18 +317,18 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
         delegate?.userVerified?(verificationSuccessful)
     }
     
-    func checkCode(_ sender: AnyObject) {
+    @objc func checkCode(_ sender: AnyObject) {
         // check for no pin code
-        if (checkCodeField.text?.characters.count == 0) {
+        if (checkCodeField.text?.count == 0) {
             let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
             let controller = UIAlertController(title: "No Pin Code Entered", message: "Please enter your pin code first.", preferredStyle: .alert)
             controller.addAction(action)
             present(controller, animated: true, completion: nil)
             return
         }
-    
+        
         // check for pin < 4
-        if (checkCodeField.text?.characters.count < 4) {
+        if (checkCodeField.text?.count < 4) {
             let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
             let controller = UIAlertController(title: "Invalid length", message: "Your pin code is too short.", preferredStyle: .alert)
             controller.addAction(action)
@@ -337,7 +337,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
         }
         
         // check for pin > 6
-        if (checkCodeField.text?.characters.count > 6) {
+        if (checkCodeField.text?.count > 6) {
             let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
             let controller = UIAlertController(title: "Invalid length", message: "Your pin code is too long.", preferredStyle: .alert)
             controller.addAction(action)
@@ -349,11 +349,11 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
         VerifyClient.checkPinCode(checkCodeField.text!)
     }
     
-    func cancelVerify(_ sender: AnyObject) {
+    @objc func cancelVerify(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
     
-    func cancelCheck(_ sender: AnyObject) {
+    @objc func cancelCheck(_ sender: AnyObject) {
         // set up state correctly
         state = .verify
         pinTry = 0
@@ -378,9 +378,9 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
             self.pinTry = 0
             self.called = false
             VerifyClient.getVerifiedUser(countryCode: (self.currentCountry["country_code"] as! String), phoneNumber: self.numberField.text!,
-            onVerifyInProgress: self.onVerifyInProgressCallback,
-            onUserVerified: self.onUserVerifiedCallback,
-            onError: self.onErrorCallback)
+                                         onVerifyInProgress: self.onVerifyInProgressCallback,
+                                         onUserVerified: self.onUserVerifiedCallback,
+                                         onError: self.onErrorCallback)
         }
     }
     @IBAction func callInstead(_ sender: AnyObject) {
@@ -391,7 +391,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
             self.present(controller, animated: true, completion: nil)
             return
         }
-
+        
         VerifyClient.triggerNextEvent() { error in
             if let error = error {
                 let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
