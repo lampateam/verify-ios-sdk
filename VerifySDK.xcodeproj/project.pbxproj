@@ -237,7 +237,6 @@
 		2A9B5B271BF10E3500764007 /* VerifyUIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyUIController.swift; sourceTree = "<group>"; };
 		2AAB53ED1BF643E1004874B6 /* SDKProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SDKProperties.plist; sourceTree = "<group>"; };
 		2ABA3AB91B6166A800EB4842 /* NexmoVerify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NexmoVerify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2ABA3ABD1B6166A800EB4842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ABA3ABE1B6166A800EB4842 /* NexmoVerify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NexmoVerify.h; sourceTree = "<group>"; };
 		2AC2D0A51BF148C3004925B0 /* CountryPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerController.swift; sourceTree = "<group>"; };
 		2AC2D0A71BF149B8004925B0 /* CountryPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerDelegate.swift; sourceTree = "<group>"; };
@@ -619,7 +618,6 @@
 				2A26A76B1B6168C20062B9FD /* Config.swift */,
 				2ABA3ABE1B6166A800EB4842 /* NexmoVerify.h */,
 				2A5FEF031C036F870019AAA7 /* Countries.plist */,
-				2ABA3ABD1B6166A800EB4842 /* Info.plist */,
 				2AAB53ED1BF643E1004874B6 /* SDKProperties.plist */,
 			);
 			name = "Supporting Files";
