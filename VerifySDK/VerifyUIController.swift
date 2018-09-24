@@ -87,11 +87,12 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                     self.checkCodeField.alpha = 0
                     self.checkCodeSpinner.alpha = 0
                     
-                    self.cancelButtonLowConstraint.priority = UILayoutPriorityDefaultHigh
-                    self.cancelButtonHighConstraint.priority = UILayoutPriorityDefaultLow
+                    self.cancelButtonLowConstraint.priority = UILayoutPriority.defaultHigh
+                    self.cancelButtonHighConstraint.priority =
+                        UILayoutPriority.defaultLow
                     
-                    self.tryAgainHiddenConstraint.priority = UILayoutPriorityDefaultHigh
-                    self.tryAgainVisibleConstraint.priority = UILayoutPriorityDefaultLow
+                    self.tryAgainHiddenConstraint.priority = UILayoutPriority.defaultHigh
+                    self.tryAgainVisibleConstraint.priority = UILayoutPriority.defaultLow
                     
                     self.tryAgainButton.alpha = 0
                     self.callInsteadButton.alpha = 0
@@ -120,11 +121,12 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                     self.checkCodeField.alpha = 1
                     self.checkCodeSpinner.alpha = 1
                     
-                    self.cancelButtonLowConstraint.priority = UILayoutPriorityDefaultLow
-                    self.cancelButtonHighConstraint.priority = UILayoutPriorityDefaultHigh - 1
+                    self.cancelButtonLowConstraint.priority = UILayoutPriority.defaultLow
+                    self.cancelButtonHighConstraint.priority =
+                        UILayoutPriority.defaultHigh - 1
                     
-                    self.tryAgainHiddenConstraint.priority = UILayoutPriorityDefaultHigh
-                    self.tryAgainVisibleConstraint.priority = UILayoutPriorityDefaultLow
+                    self.tryAgainHiddenConstraint.priority = UILayoutPriority.defaultHigh
+                    self.tryAgainVisibleConstraint.priority = UILayoutPriority.defaultLow
                     
                     self.tryAgainButton.alpha = 0
                     self.callInsteadButton.alpha = 0
@@ -152,11 +154,12 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                     self.checkCodeField.alpha = 1
                     self.checkCodeSpinner.alpha = 1
                     
-                    self.cancelButtonLowConstraint.priority = UILayoutPriorityDefaultLow
-                    self.cancelButtonHighConstraint.priority = UILayoutPriorityDefaultHigh - 1
+                    self.cancelButtonLowConstraint.priority = UILayoutPriority.defaultLow
+                    self.cancelButtonHighConstraint.priority =
+                        UILayoutPriority.defaultHigh - 1
                     
-                    self.tryAgainHiddenConstraint.priority = UILayoutPriorityDefaultLow
-                    self.tryAgainVisibleConstraint.priority = UILayoutPriorityDefaultHigh
+                    self.tryAgainHiddenConstraint.priority = UILayoutPriority.defaultLow
+                    self.tryAgainVisibleConstraint.priority = UILayoutPriority.defaultHigh
                     
                     self.tryAgainButton.alpha = 1
                     self.callInsteadButton.alpha = 1
