@@ -106,7 +106,8 @@ class HttpRequestBuilder {
                 }
                 queryString += "\(encodedKey!)=\(encodedValue!)&"
             }
-            queryString = queryString.substring(to: queryString.characters.index(before: queryString.endIndex))
+
+            queryString = String(queryString[..<queryString.endIndex])
         }
         
         let request : NSMutableURLRequest
