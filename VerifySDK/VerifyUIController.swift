@@ -69,7 +69,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                 // change the function of the send code button
                 sendCodeButton.removeTarget(self, action: #selector(VerifyUIController.checkCode(_:)), for: .touchUpInside)
                 sendCodeButton.addTarget(self, action: #selector(VerifyUIController.sendCode(_:)), for: .touchUpInside)
-                sendCodeButton.setTitle("CONTINUE", for: UIControlState())
+                sendCodeButton.setTitle("CONTINUE", for: UIControl.State())
                 
                 // change function of cancel button
                 cancelButton.removeTarget(self, action: #selector(VerifyUIController.cancelCheck(_:)), for: .touchUpInside)
@@ -104,7 +104,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                 // change the function of the send code button
                 sendCodeButton.removeTarget(self, action: #selector(VerifyUIController.sendCode(_:)), for: .touchUpInside)
                 sendCodeButton.addTarget(self, action: #selector(VerifyUIController.checkCode(_:)), for: .touchUpInside)
-                sendCodeButton.setTitle("CONTINUE", for: UIControlState())
+                sendCodeButton.setTitle("CONTINUE", for: UIControl.State())
                 
                 // change function of cancel button
                 cancelButton.removeTarget(self, action: #selector(VerifyUIController.cancelVerify(_:)), for: .touchUpInside)
@@ -137,7 +137,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
                 // change the function of the send code button
                 sendCodeButton.removeTarget(self, action: #selector(VerifyUIController.sendCode(_:)), for: .touchUpInside)
                 sendCodeButton.addTarget(self, action: #selector(VerifyUIController.checkCode(_:)), for: .touchUpInside)
-                sendCodeButton.setTitle("CONTINUE", for: UIControlState())
+                sendCodeButton.setTitle("CONTINUE", for: UIControl.State())
                 
                 // change function of cancel button
                 cancelButton.removeTarget(self, action: #selector(VerifyUIController.cancelVerify(_:)), for: .touchUpInside)
